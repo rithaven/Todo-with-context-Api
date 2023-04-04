@@ -16,9 +16,18 @@ const deleteTodo = (Index) => {
 }
   
   const handleChange = (index) => {
+    console.log(index)
     setTodo(strickTodo=>{
-      strickTodo[index].isCompleted = true
-      return strickTodo
+      const newTodo = [...strickTodo]
+      return newTodo.map((item,todoIndex)=>
+        {
+          console.log({todoIndex})
+          if(todoIndex===index){
+            return {...item,isCompleted:!item.isCompleted}
+          }
+          
+          return item
+        })
     })
       
   }
@@ -26,7 +35,7 @@ const deleteTodo = (Index) => {
   return (
     <div className="flex flex-col items-center w-full gap-5 text-center">
         <div className="flex flex-col w-1/2 px-3 py-5 rounded-md backdrop-blur-lg">
-          {todo.map((todo, index) => (
+          {todo.map((item, index) => (
           
             <div className="flex items-center justify-between w-full gap-2 border-b">
              
@@ -39,12 +48,12 @@ const deleteTodo = (Index) => {
               >
                 <input  
               type="checkbox"
-              name="agreement"
-              value={todo.isCompleted}
+              name="checkbox"
+              checked={item.isCompleted}
               onChange={()=>handleChange(index)}
               className="mr-2 text-left break-normal list-none "
             />
-              <p className={`${todo.isCompleted && 'line-through' }  `} >{todo.value}</p>
+              <p className={`${item.isCompleted && 'line-through' }  `} >{item.value}</p>
               </div>
               
              
