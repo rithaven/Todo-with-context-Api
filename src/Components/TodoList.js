@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { useTodoContext } from "../Context/GlobalContext";
 import { BsFillPlusCircleFill } from "react-icons/bs";
 

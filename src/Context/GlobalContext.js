@@ -7,14 +7,14 @@ const defaultTodo = [{value:"Learn new things for web or mobile", isCompleted:fa
 const GlobalProvider = ({children}) => {
     const  [todo,setTodo] = useState(defaultTodo);
 
-    const Values = {
+    const values = {
         todo,
         setTodo
        
     };
 
     return(
-        <GlobalContext.Provider value={Values} >{children}</GlobalContext.Provider>
+        <GlobalContext.Provider value={values} >{children}</GlobalContext.Provider>
     )
 }
 

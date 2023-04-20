@@ -1,7 +1,7 @@
 import Todo from "./Components/Todo";
 import TodoList from "./Components/TodoList";
 import GlobalContext from "./Context/GlobalContext";
-import { motion } from "framer-motion";
+
 
 
 
